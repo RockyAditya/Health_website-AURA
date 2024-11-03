@@ -1,0 +1,75 @@
+/* UserLogin.css */
+
+/* Container to center the book on the page */
+
+.bg{
+    background-image: url('../Assets/bgl.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 91vh;
+    
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+}
+
+/* Main container for the login form */
+.book {
+  position: relative;
+  border-radius: 15px;
+  width: 400px;
+  height: 500px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transform: preserve-3d;
+  perspective: 2000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  margin-top: 100px; /* Centers it vertically */
+}
+
+/* Cover that rotates on hover */
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: #ececec;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transform-origin: left;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  transform: rotateY(-82deg);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Login text on the cover */
+.cover p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Styling for the login form container */
+.login-container {
+  padding: 2rem;
+  text-align: center;
+  visibility: hidden; /* Initially hidden behind the cover */
+}
+
+.book:hover .login-container {
+  visibility: visible; /* Becomes visible when the cover is rotated */
+}
